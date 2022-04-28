@@ -40,7 +40,7 @@ class Piggy(PiggyParent):
                 "s": ("Shy", self.shy),
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
-                "q": ("Quit", self.quit)
+                "q": ("Quit", self.quit),
                 "l": ("Luke", self.luke)
                 }
         # loop and print the menu...
@@ -61,7 +61,7 @@ class Piggy(PiggyParent):
       self.fwd()
       time.sleep(2)
       self.right()
-      time.sleep(0.75)
+      time.sleep(0.8)
       self.stop
 
     def dance(self):
