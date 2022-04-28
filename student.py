@@ -58,11 +58,11 @@ class Piggy(PiggyParent):
     '''
 
     def luke(self):
-      for edge in range(4)
-      self.fwd()
-      time.sleep(2)
-      self.right()
-      time.sleep(0.8)
+      for edge in range(4):
+        self.fwd()
+        time.sleep(2)
+        self.right()
+        time.sleep(0.8)
       self.stop
 
     def dance(self):
