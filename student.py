@@ -60,6 +60,8 @@ class Piggy(PiggyParent):
     def luke(self):
       self.fwd()
       time.sleep(2)
+      self.right()
+      time.sleep(0.75)
       self.stop
 
     def dance(self):
