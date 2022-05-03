@@ -72,22 +72,20 @@ class Piggy(PiggyParent):
         
         # lower-ordered example...
         self.safe_to_dance()
-        if distance < 300 :
-          return True
-        else: 
-          return False 
-        self.right(primary=90, counter=-90)
-        time.sleep(4)
-        self.fwd()
-        time.sleep(1)
-        self.back()
-        time.sleep(1)
-        for edge in range (3):
+        if distance > 3000 :
           self.right(primary=90, counter=-90)
-          time.sleep(0.2)
-          self.left(primary=90, counter=-90)
-          time.sleep(0.2)
-          
+          time.sleep(4)
+          self.fwd()
+          time.sleep(1)
+          self.back()
+          time.sleep(1)
+          for edge in range (3):
+            self.right(primary=90, counter=-90)
+            time.sleep(0.2)
+            self.left(primary=90, counter=-90)
+            time.sleep(0.2)
+        else: 
+          print("Not enought space")
         self.stop()
         
 
