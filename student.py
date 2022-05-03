@@ -71,7 +71,7 @@ class Piggy(PiggyParent):
         
         # lower-ordered example...
         self.safe_to_dance()
-        if self.read_distance() < 3000 :
+        if self.read_distance() <= 3000 :
           self.right(primary=90, counter=-90)
           time.sleep(4)
           self.fwd()
