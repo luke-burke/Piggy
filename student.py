@@ -71,6 +71,11 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         # lower-ordered example...
+        self.safe_to_dance()
+        if distance < 300 :
+          return True
+        else: 
+          return False 
         self.right(primary=90, counter=-90)
         time.sleep(4)
         self.fwd()
