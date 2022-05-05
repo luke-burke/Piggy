@@ -41,7 +41,9 @@ class Piggy(PiggyParent):
                 "f": ("Follow", self.follow),
                 "c": ("Calibrate", self.calibrate),
                 "q": ("Quit", self.quit),
-                "l": ("Luke", self.luke)
+                "l": ("Luke", self.luke),
+                "w": ("Wall Stop", self.to_wall),
+                "t": ("Wall Turn", self.wall_turn)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -94,6 +96,7 @@ class Piggy(PiggyParent):
         self.read_distance()
         if self.read_distance()>= 700:
           return True
+        if self.read_distance = True:
           self.servo(2000)
           self.read_distance()
           self.right()
