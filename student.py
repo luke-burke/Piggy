@@ -70,8 +70,8 @@ class Piggy(PiggyParent):
         # TODO: check to see if it's safe before dancing
         
         # lower-ordered example...
-        self.safe_to_dance()
-        if self.read_distance() <= 3000 :
+        
+        if self.safe_to_dance():#self.read_distance() <= 3000 :
           self.right(primary=90, counter=-90)
           time.sleep(4)
           self.fwd()
@@ -92,16 +92,39 @@ class Piggy(PiggyParent):
       for edge in range (4):
         self.servo(1000)
         self.read_distance()
-        self.servo(2000)
+        if self.read_distance()>= 700:
+          return True
+          self.servo(2000)
+          self.read_distance()
+          self.right()
+          time.sleep(0.8)
+          
+        
+        """self.servo(2000)
         self.read_distance()
         self.right()
-        time.sleep(0.8)
+        time.sleep(0.8)"""
       self.stop()
       
 
     def shake(self):
         """ Another example move """
         self.deg_fwd(720)
+        self.stop()
+
+    def to_wall(self):
+      self.fwd()
+      if self.read_distance() <= 100 :
+        self.stop()
+
+    def wall_turn(self):
+      self.fwd()
+      if self.read_distance() <= 100 :
+        self.stop()
+        self.right(primary=90, counter= -90)
+        time.sleep(1)
+        self.fwd()
+        time.sleep(2)
         self.stop()
 
     def example_move(self):
