@@ -94,10 +94,10 @@ class Piggy(PiggyParent):
       for edge in range (4):
         self.servo(1000)
         self.read_distance()
-        if self.read_distance()>= 1000:
+        if self.read_distance()>= 500:
           self.servo(2000)
           self.read_distance()
-          if self.read_distance() == 1000:
+          if self.read_distance() == 500:
             self.servo(2000)
             self.read_distance()
             self.right()
