@@ -94,20 +94,21 @@ class Piggy(PiggyParent):
       for edge in range (4):
         self.servo(1000)
         self.read_distance()
-        if self.read_distance()>= 700:
+        if self.read_distance()>= 1000:
           return True
           if self.read_distance() == True:
             self.servo(2000)
             self.read_distance()
             self.right()
             time.sleep(0.8)
-          
+        if else:
+          self.stop()
         
         """self.servo(2000)
         self.read_distance()
         self.right()
         time.sleep(0.8)"""
-      self.stop()
+      
       
 
     def shake(self):
