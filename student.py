@@ -133,17 +133,16 @@ class Piggy(PiggyParent):
         self.fwd()
 
     def wall_turn(self):
-      self.fwd()
-      self.read_distance()
-      if self.read_distance() <= 300 :
-        self.stop()
-        self.right(primary=90, counter= -90)
-        time.sleep(1)
+      while True :
         self.fwd()
-        time.sleep(2)
-        self.stop()
-      else:
-        self.fwd()
+        self.read_distance()
+        if self.read_distance() <= 400 :
+          self.stop()
+          self.right(primary=90, counter= -90)
+          time.sleep(1)
+          self.fwd()
+          time.sleep(1)
+      
 
     def example_move(self):
         """this is an example dance move that should be replaced by student-created content"""
