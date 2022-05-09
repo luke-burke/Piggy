@@ -43,7 +43,8 @@ class Piggy(PiggyParent):
                 "q": ("Quit", self.quit),
                 "l": ("Luke", self.luke),
                 "w": ("Wall Stop", self.to_wall),
-                "t": ("Wall Turn", self.wall_turn)
+                "t": ("Wall Turn", self.wall_turn),
+                "h": ("See Heading", self.see_heading)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
@@ -88,7 +89,12 @@ class Piggy(PiggyParent):
         else: 
           print("Not enought space")
         self.stop()
-        
+      
+    def see_heading(self):
+      while True :
+        time.sleep(1)
+        self.get_heading()
+      
 
     def safe_to_dance(self):
       for edge in range (4):
@@ -116,6 +122,7 @@ class Piggy(PiggyParent):
         self.read_distance()
         self.right()
         time.sleep(0.8)"""
+    
       
       
 
