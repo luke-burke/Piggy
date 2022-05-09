@@ -125,10 +125,12 @@ class Piggy(PiggyParent):
         self.stop()
 
     def to_wall(self):
-      self.read_distance()
       self.fwd()
+      self.read_distance()
       if self.read_distance() <= 300 :
         self.stop()
+      else:
+        self.fwd()
 
     def wall_turn(self):
       self.fwd()
