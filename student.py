@@ -97,6 +97,7 @@ class Piggy(PiggyParent):
         self.get_heading()
 
     def box_move(self):
+      self.servo(1300)
       while True :
         self.servo(1300)
         while self.read_distance() >= 201:
