@@ -97,27 +97,32 @@ class Piggy(PiggyParent):
         self.get_heading()
 
     def box_move(self):
-      self.servo(1600)
+      self.servo(self.MIDPOINT)
       while True :
-        self.servo(1600)
+        self.servo(self.MIDPOINT)
         while self.read_distance() >= 201:
           self.fwd()
           time.sleep(0.2)
         self.right()
         time.sleep(0.4)
+        self.servo(2100)
         while self.read_distance() <= 450:
-          self.turn_by_deg(20)
-        while True:
-          self.servo(2100)
-          while self.read_distance() <=300:
-            self.fwd()
-            time.sleep(0.1)
-          self.servo(1600)
           self.fwd()
-          time.sleep(1)
-          self.left()
-          time.sleep(0.9)
-      self.stop()
+        time.sleep(0.5)
+        self.left()
+        time.sleep(0.4)
+        self.fwd()
+
+        
+        """while self.read_distance() <=300:
+          self.fwd()
+          time.sleep(0.1)
+        self.servo(self.MIDPOINT)
+        self.fwd()
+        time.sleep(1)
+        self.left()
+        time.sleep(0.9)
+      self.stop()"""
   
     def safe_to_dance(self):
       for edge in range (4):
