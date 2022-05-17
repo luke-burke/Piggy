@@ -19,7 +19,7 @@ class Piggy(PiggyParent):
         '''
         self.LEFT_DEFAULT = 80
         self.RIGHT_DEFAULT = 75
-        self.MIDPOINT = 1375   # what servo command (1000-2000) is straight forward for your bot?
+        self.MIDPOINT = 1600   # what servo command (1000-2000) is straight forward for your bot?
         self.set_motor_power(self.MOTOR_LEFT + self.MOTOR_RIGHT, 0)
         self.load_defaults()
         
@@ -97,9 +97,9 @@ class Piggy(PiggyParent):
         self.get_heading()
 
     def box_move(self):
-      self.servo(1300)
+      self.servo(1600)
       while True :
-        self.servo(1300)
+        self.servo(1600)
         while self.read_distance() >= 201:
           self.fwd()
           time.sleep(0.2)
@@ -112,7 +112,7 @@ class Piggy(PiggyParent):
           while self.read_distance() <=300:
             self.fwd()
             time.sleep(0.1)
-          self.servo(1300)
+          self.servo(1600)
           self.fwd()
           time.sleep(1)
           self.left()
