@@ -108,14 +108,14 @@ class Piggy(PiggyParent):
           self.turn_by_deg(20)
         while True:
           self.servo(2100)
-        while self.read_distance() <=300:
+          while self.read_distance() <=300:
+            self.fwd()
+            time.sleep(0.1)
+          self.servo(1300)
           self.fwd()
-          time.sleep(0.1)
-        self.servo(1300)
-        self.fwd()
-        time.sleep(1)
-        self.left()
-        time.sleep(0.8)
+          time.sleep(1)
+          self.left()
+          time.sleep(0.8)
       self.stop()
   
     def safe_to_dance(self):
