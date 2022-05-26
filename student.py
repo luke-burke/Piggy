@@ -128,7 +128,7 @@ class Piggy(PiggyParent):
 
     def int_move(self):
       self.servo(self.MIDPOINT)
-      self.fwd()
+      self.fwd(30,30)
       while True:
         self.servo(1200)
         if self.read_distance() <= 200:
@@ -138,8 +138,10 @@ class Piggy(PiggyParent):
             self.box_move()
           else:
             self.right(primary=10, counter=-10)
-            time.sleep(0.2)
-            self.fwd()
+            time.sleep(1)
+            self.left(primary=10, counter=-10)
+            time.sleep(1)
+            self.fwd(30,30)
         else:
           self.servo(self.MIDPOINT)
           if self.read_distance() <= 200:
@@ -153,8 +155,10 @@ class Piggy(PiggyParent):
                 self.box_move()
               else:
                 self.left(primary=10, counter=-10)
-                time.sleep(0.2)
-                self.fwd
+                time.sleep(1)
+                self.right(primary=10, counter=-10)
+                time.sleep(1)
+                self.fwd(30,30)
                 
 
         
