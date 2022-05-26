@@ -98,33 +98,63 @@ class Piggy(PiggyParent):
 
     def box_move(self):
       self.servo(self.MIDPOINT)
-      while True :
-        self.servo(self.MIDPOINT)
-        while self.read_distance() >= 201:
-          self.fwd()
-          time.sleep(0.2)
-        self.stop()
-        self.servo(2000)
+      while self.read_distance() >= 201:
+        self.fwd()
+        time.sleep(0.2)
+      self.stop()
+      self.servo(2000)
+      if self.read_distance() >= 600:
+        self.left()
+        time.sleep(0.6)
+        self.fwd()
+        time.sleep(1)
+        self.right()
+        time.sleep(0.6)
+        self.fwd()
+        time.sleep(1)
+      else: 
+        self.servo(1200)
         if self.read_distance() >= 600:
-          self.left()
-          time.sleep(0.6)
-          self.fwd()
-          time.sleep(1)
           self.right()
           time.sleep(0.6)
           self.fwd()
           time.sleep(1)
-        else: 
-          self.servo(1200)
-          if self.read_distance() >= 600:
-            self.right()
-            time.sleep(0.6)
+          self.left()
+          time.sleep(0.6)
+          self.fwd()
+          time.sleep(1)
+
+
+    def int_move(self):
+      self.servo(self.MIDPOINT)
+      self.fwd()
+      while True:
+        self.servo(1200)
+        if self.read_distance() <= 200:
+          self.stop()
+          self.servo(self.MIDPOINT)
+          if self.read_distance() <= 200:
+            self.box_move()
+          else:
+            self.right(primary=10, counter=-10)
+            time.sleep(0.2)
             self.fwd()
-            time.sleep(1)
-            self.left()
-            time.sleep(0.6)
-            self.fwd()
-            time.sleep(1)
+        else:
+          self.servo(self.MIDPOINT)
+          if self.read_distance() <= 200:
+            self.box_move()
+          else:
+            self.servo(2000)
+            if self.read_distance <= 200: 
+              self.stop()
+              self.servo(self.MIDPOINT)
+              if self.read_distance() <= 200:
+                self.box_move()
+              else:
+                self.left(primary=10, counter=-10)
+                time.sleep(0.2)
+                self.fwd
+                
 
         
         
