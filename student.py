@@ -104,37 +104,27 @@ class Piggy(PiggyParent):
           self.fwd()
           time.sleep(0.2)
         self.stop()
-        self.servo(1900)
-        self.read_distance()
-        if self.read_distance >= 600:
-          self.right()
-          time.sleep(0.6)
-          self.servo(2100)
-          while self.read_distance() <= 450:
-            self.fwd()
-          time.sleep(0.5)
+        self.servo(2000)
+        if self.read_distance() >= 600:
           self.left()
           time.sleep(0.6)
           self.fwd()
           time.sleep(1)
-          self.left()
+          self.right()
           time.sleep(0.6)
+          self.fwd()
+          time.sleep(1)
         else: 
           self.servo(1200)
-          self.read_distance()
           if self.read_distance() >= 600:
             self.right()
             time.sleep(0.6)
-            self.servo(2100)
-            while self.read_distance() <= 450:
-              self.fwd()
-              time.sleep(0.5)
-              self.left()
-              time.sleep(0.6)
-              self.fwd()
-              time.sleep(1)
-              self.left()
-              time.sleep(0.6)
+            self.fwd()
+            time.sleep(1)
+            self.left()
+            time.sleep(0.6)
+            self.fwd()
+            time.sleep(1)
 
         
         
