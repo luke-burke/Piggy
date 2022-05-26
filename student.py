@@ -146,7 +146,7 @@ class Piggy(PiggyParent):
             self.box_move()
           else:
             self.servo(2000)
-            if self.read_distance <= 200: 
+            if self.read_distance() <= 200: 
               self.stop()
               self.servo(self.MIDPOINT)
               if self.read_distance() <= 200:
